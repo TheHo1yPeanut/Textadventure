@@ -1,0 +1,87 @@
+print("The Story About The 3 Younglings\n A Game Made By Isne, Nodu & Yema\n Copyright-2023\n")
+# 3-5 rum
+# mulighed for at gå fra rum til rum
+# - kommandoer: south, east, etc.
+# printe beskrivelse af rum
+# - kommando: look
+# - når man går ind i et rum
+
+# beskrivelse når programmet starter
+# bruger kan indtaste kommandoer i et loop
+
+# Print en beskrivelse af rum nr. 1
+def choosecharacter():
+    x = input("Hvilken karakter vælger du?\n 1. Isak\n 2. Eugen\n 3. Noah\n")
+    if x == "Noah":
+        print("Tillykke! Du har valgt et ADHD barn")
+    if x == "Eugen":
+        print("Tillykke! Du har fået hovedpersonen fra Prison Break")
+    if x == "Isak":
+        print("Tillykke! Du har valgt den stærkeste, flotteste og klogeste.")
+    else:
+        print("Du har vist skrevet navnet forkert")
+
+
+def describe_room_1():
+    print("Du er i det første rum.")
+    print("Mod syd er der en dør.")
+    print("Mod vest er der en dør.")
+
+def describe_room_2():
+    print("skriv noget spændende om rummet her")
+
+def describe_room_3():
+    print("skriv noget spændende om rummet her")
+
+def describe_room_4():
+    print("skriv noget spændende om rummet her")
+
+def describe_room_5():
+    print("skriv noget spændende om rummet her")
+
+def describe_room_6():
+    print("skriv noget spændende om rummet her")
+
+def describe_room_7():
+    print("skriv noget spændende om rummet her")
+
+#def bruger(): # Vores karakter
+
+#def lookaround(bruger): # Denne funktion er 'look' commanden
+   # x = input("Vil du gerne kigge dig rundt i rummet? (Ja eller Nej)\n")
+   # if x == "Ja":
+     #   bruger == 
+# Print en beskrivelse af current_room
+def look(current_room):
+    if current_room == 1:
+        describe_room_1()
+    elif current_room == 2:
+        describe_room_2()
+    elif current_room == 3:
+        describe_room_3()
+    elif current_room == 4:
+        describe_room_4()
+    elif current_room == 5:
+        describe_room_5()
+    elif current_room == 6:
+        describe_room_6()
+    elif current_room == 7:
+        describe_room_7()
+    else:
+        print("Der er sket en fejl.")
+
+# Hold styr på hvilket rum spilleren er i
+current_room = 1
+
+# Print beskrivelse når spillet starter
+#look(current_room)
+
+while True:
+    command = input("> ")           # Bruger indtaster kommando
+    if command == "look":
+        look(current_room)          # Brug current_room variabel til at
+                                    # printe beskrivelse af rummet
+    elif command == "quit":
+        break
+    else:
+        print("Det forstår jeg ikke. Prøv igen!")
