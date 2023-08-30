@@ -22,19 +22,17 @@ def choosecharacter():
         print("Du har vist skrevet navnet forkert")
 
 
-def describe_room_1():
-    print("Du er i det første rum.")
-    print("Mod syd er der en dør.")
-    print("Mod vest er der en dør.")
+def describe_room_start(): # The very first room
+    print("You enter the very first room, you certainly don't feel welcome in this creepy place. You see cobwebs hanging from the ceiling and each step you take you hear the wood beneath you eeking, and there is this distant smell of cheese.")
 
-def describe_room_2():
+def describe_room_1R(): # R for right
+    print("There is not much to see in this room, it's rather dusty like it hasn't been cleaned in months, and in the corner of the room you spot a chair and table, however the chair is missing a chair leg, on top of the table you find a cup filled liquid, however it appears the cup is giving of steam, and is still hot!?!?!?!?!?! ")
+
+def describe_room_1L(): #L for left
     print("skriv noget spændende om rummet her")
 
-def describe_room_3():
-    print("skriv noget spændende om rummet her")
-
-def describe_room_4():
-    print("skriv noget spændende om rummet her")
+def describe_room_2R(): # Crazy ending 
+    print("The room appears to be made of rubber, in the room you find a couple of rats, rats... rats make me crazy. Crazy, I was crazy once, they locked me in a room, a rubber room, a rubber room with rats, rats make me crazy. Crazy, I was crazy once...  ")
 
 def describe_room_5():
     print("skriv noget spændende om rummet her")
@@ -45,22 +43,28 @@ def describe_room_6():
 def describe_room_7():
     print("skriv noget spændende om rummet her")
 
-#def bruger(): # Vores karakter
+#def bruger(): # Vores karakter, den her skal bruges hvis vi skal lave inventories eller 'lookaround' fx
+# Så hvis personen der spiller spillet skriver 'inventory' for at checke inventory
+# Kan vi lave en inventory funktion der adder ting til sin egen variabel, dvs hvis vi finder en kniv
+# Så +'er vi bare knife til 'inventory', og når vi så skal checke inventory bruger vi en masse IF's 
+# som checker, okay IF 'bruger' has this and that, print this and that, så ser spilleren det han har. :)
 
 #def lookaround(bruger): # Denne funktion er 'look' commanden
    # x = input("Vil du gerne kigge dig rundt i rummet? (Ja eller Nej)\n")
    # if x == "Ja":
      #   bruger == 
+
+
 # Print en beskrivelse af current_room
 def look(current_room):
     if current_room == 1:
-        describe_room_1()
+        describe_room_start()
     elif current_room == 2:
-        describe_room_2()
+        describe_room_1R()
     elif current_room == 3:
-        describe_room_3()
+        describe_room_1L()
     elif current_room == 4:
-        describe_room_4()
+        describe_room_2R()
     elif current_room == 5:
         describe_room_5()
     elif current_room == 6:
@@ -70,13 +74,11 @@ def look(current_room):
     else:
         print("Der er sket en fejl.")
 
-choosecharacter() 
+choosecharacter()
 
 # Hold styr på hvilket rum spilleren er i
 current_room = 1
-
 # Print beskrivelse når spillet starter
-#look(current_room)
 
 while True:
     command = input("> ")           # Bruger indtaster kommando
