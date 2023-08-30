@@ -2,7 +2,12 @@
 Welcome to this textadventure!
 The commands will be listed below:
 
+The prefix for commands are " ! "
+
+
 !help (This command will show you every other command)
+
+!quit (End game)
 
 !help basics (Shows every basic function in the game that is needed)
 
