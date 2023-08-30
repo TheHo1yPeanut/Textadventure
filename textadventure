@@ -70,6 +70,8 @@ def look(current_room):
     else:
         print("Der er sket en fejl.")
 
+choosecharacter() 
+
 # Hold styr på hvilket rum spilleren er i
 current_room = 1
 
