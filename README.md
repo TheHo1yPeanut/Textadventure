@@ -8,6 +8,8 @@ The commands are listed below:
 
 <i>help</i> (This command will show you every other command)
 
+</i>look</i> (Describes the current room, the player will look around)
+
 <i>next</i> (Moves you to the choice between the left and right room)
 
 <i>left</i> (You continue to the left room)
