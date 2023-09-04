@@ -1,4 +1,4 @@
-print("The Story About The 3 Younglings\n A Game Made By Isne, Nodu & Yema\n Copyright-2023\n")
+print("The Story About The 3 Younglings\n A Game Made By Isne, Nodu & Yema\n Copyright-2023\n H.C. Ørsted Gymnasium")
 # 3-5 rum
 # mulighed for at gå fra rum til rum
 # - kommandoer: south, east, etc.
@@ -48,9 +48,13 @@ def describe_room_3R(): # # Ancient ending, R for right
 # Kan vi lave en inventory funktion der adder ting til sin egen variabel, dvs hvis vi finder en kniv
 # Så +'er vi bare knife til 'inventory', og når vi så skal checke inventory bruger vi en masse IF's 
 # som checker, okay IF 'bruger' has this and that, print this and that, så ser spilleren det han har. :)
+inventory = [] # Et empty inventory liste
 
-def inventorycommand():
-    if 
+def describeinventory():
+    if "knife" in inventory:
+        print("You currently have a knife in your inventory.")
+    if "pistol" in inventory:
+        print("You currently have a pistol in your inventory.")
 
 # Print en beskrivelse af current_room
 def look(current_room): # Vi tager vores 'current_room' og sætter den ind som parameter her fordi den ikke er global men en lokal variabel
@@ -87,6 +91,10 @@ while True:
     if command == "look":
         look(current_room)          # Brug current_room variabel til at
                                     # printe beskrivelse af rummet
+        if current_room == 2:
+            inventory.append("knife")
+        elif current_room == 6:
+            inventory.append("pistol")
     elif command == "quit": # Hvis brugeren skriver 'quit' slutter programmet
         break
     elif command == "next":
@@ -97,6 +105,8 @@ while True:
     elif command == "right":
         print("You have moved through the door to your right! \n Use 'look' command to look around")
         current_room += 1
+    elif command == "inventory":
+        print(describeinventory)
     elif command == "help":
         print(" 'look' (Describes the current room, the player will look around \n 'next' (Moves you to the choice between the left and right room)\n 'left' (You continue to the left room)\n 'right' (You continue to the right room) \n 'quit' (End game)")
     else:
