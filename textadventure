@@ -69,21 +69,11 @@ def look(current_room):
         describe_room_3L()
     else:
         print("Der er sket en fejl.")
-# Jeg har gjort sådan at right rooms er +1 og left rooms er +5 simply
-#  bare for at gøre kommandoen left of right nemmere at lave
-
-
-
-
 
 # Hold styr på hvilket rum spilleren er i
 current_room = 1
 # Sat til 1, fordi value = 1 er starter room
 
-current_items = 0
-# 1 for knife
-# 2 for gun
-# 3 for dagger
 
 while True:
     command = input("> ")           # Bruger indtaster kommando
@@ -98,6 +88,8 @@ while True:
         break
     elif command == "next":
         print("Do you want to move left or right? \n")
+# Jeg har gjort sådan at right rooms er +1 og left rooms er +5 simply
+#  bare for at gøre kommandoen left of right nemmere at lave
     elif command == "left":
         print("You have moved through the door to your left! \n Use 'look' command to look around")
         current_room += 5
