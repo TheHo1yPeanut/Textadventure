@@ -1,11 +1,14 @@
 import time # Vi bruger time library for at putte delay på vores print's i room R1 og room L1
-print("The Story About The 3 Younglings\n A Game Made By Isne, Nodu & Yema\n Copyright-2023\n H.C. Ørsted Gymnasium\n")
+def gamestart(): # Vi laver den her som en funktion så vi kan kalde det hvis folk skriver "Nej" efter de har skrevet 'quit' og så blevet spurgt, derefter siger nej.
+    print("The Story About The 3 Younglings\n A Game Made By Isne, Nodu & Yema\n Copyright-2023\n H.C. Ørsted Gymnasium\n")
+
+gamestart() # Kalder funktionen gamestart
 
 def choosecharacter():
     x = input("Hvilken karakter vælger du?\n 1. Isak\n 2. Eugen\n 3. Noah\n")
     if x == "Noah":
         print("Congratulations! You have chosen an ADHD kid :) \n use 'help' if confused")
-    if x == "Eugen":
+    if x == "Eugen":    
         print("Congratulations! You have chosen the main character from Prison Break \n use 'help' if confused")
     if x == "Isak":
         print("Congratulations! You have chosen the smartest, strongest and most handsome character in the game \n use 'help' if confused")
@@ -20,7 +23,7 @@ def describe_room_start(): # The very first room
 def describe_room_1R(): # R for right
     print("The first thing you notice in this eeky room is a knife on a shelf. \n Player grabs this knife \n Knife added to inventory \n use 'inventory' to see your items.")
     time.sleep(5)
-    print("You look around, and you notice that there is not much to see in this room, it's rather dusty like it hasn't been cleaned in months, and in the corner of the room you spot a chair and table, however the chair is missing a chair leg, on top of the table you find a cup filled liquid, however it appears the cup is giving of steam, and is still hot!?!?!?!?!?! ")
+    print("You look around, and you notice that there is not much to see in this room, it's rather dusty like it hasn't been cleaned in months, and in the corner of the room you spot a chair and table, however the chair is missing a chair leg, on top of the table you find a cup filled liquid, however it appears the cup is giving of steam, and is still hot!?!?!?!?!?! \n 'help' if confused. ")
 
 def describe_room_1L(): # L for left
     print("You enter the left room and you see a pistol hanging on the wall. You grab it \n Pistol added to inventory. Use 'inventory' to check your items.")
@@ -29,9 +32,28 @@ def describe_room_1L(): # L for left
 
 def describe_room_2L(): # Crazy ending, L for left
     print("The room appears to be made of rubber, in the room you find a couple of rats, rats... rats make me crazy. Crazy, I was crazy once, they locked me in a room, a rubber room, a rubber room with rats, rats make me crazy. Crazy, I was crazy once...  ")
+    time.sleep(11)
+    x = input("You seem to be stuck in an endless loop. You have a pistol, do you wish to shoot yourself? \n 1. Yes \n 2. No\n >")
+    if x == "Yes" or "1":
+        print("User is dead. \n You unlocked the achievement: Suicide.")
+    if x == "No" or "2":
+        print("Crazy?! I was crazy once, they locked me in a room. A rubber room! A rubber room with rats, rats make me crazy!")
+        time.sleep(3)
+        print("Crazy?! I was crazy once, they locked me in a room. A rubber room! A rubber room with rats, rats make me crazy!")
+        time.sleep(3)
+        print("Crazy?! I was crazy once, they locked me in a room. A rubber room! A rubber room with rats, rats make me crazy!")
 
 def describe_room_2R(): # Doll ending, R for right
     print("In the final room, dim candlelight reveals a life-sized, eerie doll. Its glassy eyes follow your every step as you approach, sending shivers down your spine. A haunting melody fills the air, and the doll's frayed clothing rustles as it moves closer. Heart pounding, you escape just as its malevolent grin twists into nothingness, leaving you with a chilling memory.")
+    x = input("Do you want to head back and fight the monster with the items that you have picked up? \n 1. Yes \n 2. No \n >")
+    if x == "Yes" or "1":
+        print("You use your knife and slice the doll's throat open. The doll lays on the ground \n You unlocked the achievement: The Doll Master")
+        time.sleep(3)
+        print("Thanks for playing our game! ")
+    if x == "No" or "2":
+        print("You run away, but the doll will haunt you for the rest of your life. \n You unlocked the achievement: Runaway ")
+        time.sleep(3)
+        print("Thanks for playing our game! ")
 
 def describe_room_3L(): # Happy ending, L for left
     print("Congratulations you have reached one of the endings. Confetti rains from the sky and disco lights start flashing. The boss's menacing roar turns into comical squeaks as it shrinks down, wearing oversized sunglasses. Your character starts dancing the floss, and a parade of friendly NPCs joins in. ")
@@ -85,7 +107,14 @@ while True:
         elif current_room == 6:
             inventory.append("pistol")
     elif command == "quit": # Hvis brugeren skriver 'quit' slutter programmet
-        break
+        ask_user_to_quit = input("Are you sure you wish to kill yourself?")
+        if ask_user_to_quit == "Yes":
+            print("You have commited suicide.")
+            time.sleep(2)
+            print("Game will now end...")
+            break
+        if ask_user_to_quit == "No":
+            gamestart()
     elif command == "next":
         print("Do you want to move left or right? \n")
 # Jeg har gjort sådan at right rooms er +1 og left rooms er +5 simply
@@ -99,6 +128,6 @@ while True:
     elif command == "inventory":
         describeinventory()
     elif command == "help":
-        print(" 'look' (Describes the current room, the player will look around \n 'next' (Moves you to the choice between the left and right room)\n 'left' (You continue to the left room)\n 'right' (You continue to the right room) \n 'quit' (End game)")
+        print(" 'look' (Describes the current room, the player will look around \n 'next' (Moves you to the choice between the left and right room)\n 'left' (You continue to the left room)\n 'right' (You continue to the right room) \n 'inventory' (Lists the items that you hold.) \n 'quit' (End game)")
     else:
         print("You most likely misspelled, please try again!") # Hvis brugeren skriver noget andet ved en fejl
