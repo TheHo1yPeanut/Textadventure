@@ -1,59 +1,65 @@
-print("The Story About The 3 Younglings\n A Game Made By Isne, Nodu & Yema\n Copyright-2023\n")
+´´´py
+import time # Vi bruger time library for at putte delay på vores print's i room R1 og room L1
+print("The Story About The 3 Younglings\n A Game Made By Isne, Nodu & Yema\n Copyright-2023\n H.C. Ørsted Gymnasium\n")
 
 def choosecharacter():
     x = input("Hvilken karakter vælger du?\n 1. Isak\n 2. Eugen\n 3. Noah\n")
     if x == "Noah":
-        print("Tillykke! Du har valgt et ADHD barn \n use 'help' if confused")
+        print("Congratulations! You have chosen an ADHD kid :) \n use 'help' if confused")
     if x == "Eugen":
-        print("Tillykke! Du har fået hovedpersonen fra Prison Break \n use 'help' if confused")
+        print("Congratulations! You have chosen the main character from Prison Break \n use 'help' if confused")
     if x == "Isak":
-        print("Tillykke! Du har valgt den stærkeste, flotteste og klogeste. \n use 'help' if confused")
+        print("Congratulations! You have chosen the smartest, strongest and most handsome character in the game \n use 'help' if confused")
     else:
-        print("Du har vist skrevet navnet forkert")
+        print("You have most likely misspelled the name, please try again!")
 
+choosecharacter() # Kalder choosecharacter funktionen
 
 def describe_room_start(): # The very first room
     print("You enter the very first room, you certainly don't feel welcome in this creepy place. You see cobwebs hanging from the ceiling and each step you take you hear the wood beneath you eeking, and there is this distant smell of cheese.")
 
 def describe_room_1R(): # R for right
-    print("There is not much to see in this room, it's rather dusty like it hasn't been cleaned in months, and in the corner of the room you spot a chair and table, however the chair is missing a chair leg, on top of the table you find a cup filled liquid, however it appears the cup is giving of steam, and is still hot!?!?!?!?!?! ")
+    print("The first thing you notice in this eeky room is a knife on a shelf. \n Player grabs this knife \n Knife added to inventory \n use 'inventory' to see your items.")
+    time.sleep(5)
+    print("You look around, and you notice that there is not much to see in this room, it's rather dusty like it hasn't been cleaned in months, and in the corner of the room you spot a chair and table, however the chair is missing a chair leg, on top of the table you find a cup filled liquid, however it appears the cup is giving of steam, and is still hot!?!?!?!?!?! ")
 
-def describe_room_1L(): #L for left
-    print("Eugen har overvejet at starte til boksning, han syntes at håndbold er ass")
+def describe_room_1L(): # L for left
+    print("You enter the left room and you see a pistol hanging on the wall. You grab it \n Pistol added to inventory. Use 'inventory' to check your items.")
+    time.sleep(5)
+    print("You see one of the characters' parent. It's Noah's mom! She likes to come and touch your hair and massage the bottom of your head. Now LET HER DO THIS or else you will suffer.")
 
-def describe_room_2L(): # Crazy ending 
+def describe_room_2L(): # Crazy ending, L for left
     print("The room appears to be made of rubber, in the room you find a couple of rats, rats... rats make me crazy. Crazy, I was crazy once, they locked me in a room, a rubber room, a rubber room with rats, rats make me crazy. Crazy, I was crazy once...  ")
 
-def describe_room_2R(): #Voodoo doll ending
-    print("du er i et lille sødt rum")
+def describe_room_2R(): # Doll ending, R for right
+    print("In the final room, dim candlelight reveals a life-sized, eerie doll. Its glassy eyes follow your every step as you approach, sending shivers down your spine. A haunting melody fills the air, and the doll's frayed clothing rustles as it moves closer. Heart pounding, you escape just as its malevolent grin twists into nothingness, leaving you with a chilling memory.")
 
-def describe_room_3L():
-    print("du er i et lille stort rum")
+def describe_room_3L(): # Happy ending, L for left
+    print("Congratulations you have reached one of the endings. Confetti rains from the sky and disco lights start flashing. The boss's menacing roar turns into comical squeaks as it shrinks down, wearing oversized sunglasses. Your character starts dancing the floss, and a parade of friendly NPCs joins in. ")
 
-def describe_room_3R():
-    print("Eugen var så fed han skulle rykke op i weight-class")
+def describe_room_3R(): # # Ancient ending, R for right
+    print("You go the ancient doors creak open, revealing a chamber bathed in an ethereal glow. As you step inside, a sense of accomplishment washes over you. The room is adorned with intricate carvings depicting your journey, a testament to your tenacity. \n At the center lies the long-lost artifact you've been seeking, emitting a soft, comforting hum. As you pick it up, memories of your adventure rush through your mind. The challenges, the friendships forged, and the sacrifices made all come flooding back. \n A voice echoes, recounting your choices and their consequences. You're presented with a choice one last time: to use the artifact for power or to return it to its rightful place. Your decision shapes the world's destiny.")
 
-#def bruger(): # def bruger kommer til at være Vores karakter, den her skal bruges hvis vi skal lave inventories eller 'lookaround' fx
-# Så hvis personen der spiller spillet skriver 'inventory' for at checke inventory
-# Kan vi lave en inventory funktion der adder ting til sin egen variabel, dvs hvis vi finder en kniv
-# Så +'er vi bare knife til 'inventory', og når vi så skal checke inventory bruger vi en masse IF's 
-# som checker, okay IF 'bruger' has this and that, print this and that, så ser spilleren det han har. :)
+inventory = [] # Et empty inventory liste, fordi vi skal adde str values til den når vi finder items i spillet
 
-#def inventorycommand(
-#item_knife
-#item_dagger
-#item_pistol
-#):
-#    if item
+def describeinventory():
+    if "knife" in inventory:
+        print("You currently have a knife in your inventory.")
+    if "pistol" in inventory:
+        print("You currently have a pistol in your inventory.")
 
 # Print en beskrivelse af current_room
-def look(current_room): # Vi tager vores 'current_room' og sætter den ind som parameter her fordi den ikke er global men en lokal variabel
+# Vi tager vores 'current_room' og sætter den ind som parameter her
+# fordi den ikke er global men en lokal variabel
+def look(current_room): 
     if current_room == 1:
         describe_room_start()
-    elif current_room == 2:
+    elif current_room == 2 and "knife" not in inventory:
         describe_room_1R()
-    elif current_room == 6:
+        inventory.append("knife") # append adder en value til en liste, i det her tilfælde adder vi str("knife") til variablen "inventory"
+    elif current_room == 6 and "pistol" not in inventory:
         describe_room_1L()
+        inventory.append("pistol")
     elif current_room == 11:
         describe_room_2R()
     elif current_room == 3:
@@ -64,18 +70,31 @@ def look(current_room): # Vi tager vores 'current_room' og sætter den ind som p
         describe_room_3L()
     else:
         print("Der er sket en fejl.")
+# Jeg har gjort sådan at right rooms er +1 og left rooms er +5 simply
+#  bare for at gøre kommandoen left of right nemmere at lave
 
-choosecharacter() # Kalder choosecharacter funktionen
+
+
+
 
 # Hold styr på hvilket rum spilleren er i
 current_room = 1
-# Print beskrivelse når spillet starter
+# Sat til 1, fordi value = 1 er starter room
+
+current_items = 0
+# 1 for knife
+# 2 for gun
+# 3 for dagger
 
 while True:
     command = input("> ")           # Bruger indtaster kommando
     if command == "look":
         look(current_room)          # Brug current_room variabel til at
                                     # printe beskrivelse af rummet
+        if current_room == 2:
+            inventory.append("knife")
+        elif current_room == 6:
+            inventory.append("pistol")
     elif command == "quit": # Hvis brugeren skriver 'quit' slutter programmet
         break
     elif command == "next":
@@ -86,7 +105,10 @@ while True:
     elif command == "right":
         print("You have moved through the door to your right! \n Use 'look' command to look around")
         current_room += 1
+    elif command == "inventory":
+        describeinventory()
     elif command == "help":
         print(" 'look' (Describes the current room, the player will look around \n 'next' (Moves you to the choice between the left and right room)\n 'left' (You continue to the left room)\n 'right' (You continue to the right room) \n 'quit' (End game)")
     else:
         print("You most likely misspelled, please try again!") # Hvis brugeren skriver noget andet ved en fejl
+´´´
