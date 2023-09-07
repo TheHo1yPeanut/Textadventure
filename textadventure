@@ -4,13 +4,18 @@ def gamestart(): # Vi laver den her som en funktion så vi kan kalde det hvis fo
 
 gamestart() # Kalder funktionen gamestart
 
+
+
+def the_end_print(): # doesnt work like that apparently, can't call this function inside another function and I wont research why, cause I'm tired!
+    print("Thanks for playing our game! :) \n Made by Isne, Yema & Nodu \n H.C. Ørsted Gymnasium")
+
 def choosecharacter():
-    x = input("Hvilken karakter vælger du?\n 1. Isak\n 2. Eugen\n 3. Noah\n")
-    if x == "Noah":
+    x = input("Which character do you select?\n 1. Isak\n 2. Eugen\n 3. Noah\n - ")
+    if x == "Noah" or x == "3" or x == "noah" or x == "3." or x == "nodu" or x == "Nodu" or x == "nOAH" or x == "NOAH" or x == " noah" or x == " Noah" or x == " 3" or x == " .3":
         print("Congratulations! You have chosen an ADHD kid :) \n use 'help' if confused")
-    if x == "Eugen":    
+    elif x == "Eugen" or x == "2" or x == "eugen" or x == "2." or x == "yevhen" or x == "Yevhen" or x == "Yema" or x == " 1" or x == "EUGEN" or x == " eugen" or x == " Eugen": 
         print("Congratulations! You have chosen the main character from Prison Break \n use 'help' if confused")
-    if x == "Isak":
+    elif x == "Isak" or x == "1" or x == "isak" or x == "1." or x == "isne" or x == "Isne" or x == "ISAK" or x == "iSAK" or x == " Isak" or x == " isak" or x == " 1" or x ==  " .1":
         print("Congratulations! You have chosen the smartest, strongest and most handsome character in the game \n use 'help' if confused")
     else:
         print("You have most likely misspelled the name, please try again!")
@@ -18,48 +23,71 @@ def choosecharacter():
 choosecharacter() # Kalder choosecharacter funktionen
 
 def describe_room_start(): # The very first room
-    print("You enter the very first room, you certainly don't feel welcome in this creepy place. You see cobwebs hanging from the ceiling and each step you take you hear the wood beneath you eeking, and there is this distant smell of cheese.")
+    print("You enter the very first room, you certainly don't feel welcome in this creepy place. You see cobwebs hanging from the ceiling and each step you take you hear the wood beneath you eeking, and there is this distant smell of cheese. \n ")
+    time.sleep(5)
+    print("Wish to proceed? Type: next")
+    
 
 def describe_room_1R(): # R for right
     print("The first thing you notice in this eeky room is a knife on a shelf. \n Player grabs this knife \n Knife added to inventory \n use 'inventory' to see your items.")
-    time.sleep(5)
+    time.sleep(5)       
     print("You look around, and you notice that there is not much to see in this room, it's rather dusty like it hasn't been cleaned in months, and in the corner of the room you spot a chair and table, however the chair is missing a chair leg, on top of the table you find a cup filled liquid, however it appears the cup is giving of steam, and is still hot!?!?!?!?!?! \n 'help' if confused. ")
+    time.sleep(5)
+    print("Wish to proceed? Type: next")
 
 def describe_room_1L(): # L for left
     print("You enter the left room and you see a pistol hanging on the wall. You grab it \n Pistol added to inventory. Use 'inventory' to check your items.")
     time.sleep(5)
     print("You see one of the characters' parent. It's Noah's mom! She likes to come and touch your hair and massage the bottom of your head. Now LET HER DO THIS or else you will suffer.")
+    time.sleep(8)
+    print("Wish to proceed? Type: next")
 
 def describe_room_2L(): # Crazy ending, L for left
     print("The room appears to be made of rubber, in the room you find a couple of rats, rats... rats make me crazy. Crazy, I was crazy once, they locked me in a room, a rubber room, a rubber room with rats, rats make me crazy. Crazy, I was crazy once...  ")
-    time.sleep(11)
-    x = input("You seem to be stuck in an endless loop. You have a pistol, do you wish to shoot yourself? \n 1. Yes \n 2. No\n >")
-    if x == "Yes" or "1":
-        print("User is dead. \n You unlocked the achievement: Suicide.")
-    if x == "No" or "2":
-        print("Crazy?! I was crazy once, they locked me in a room. A rubber room! A rubber room with rats, rats make me crazy!")
+    time.sleep(7)
+    x = input("You seem to be stuck in an endless loop. You have a pistol, do you wish to shoot yourself to escape this terrific suffering? \n 1. Yes \n 2. No\n > ")
+    if x == "Yes" or x == "1" or x == "yes":
+        print("You've succesfully killed yourself and escaped the infinite loop. \n")
+        time.sleep(4)
+        print("You unlocked the achievement: Suicide.")
         time.sleep(3)
-        print("Crazy?! I was crazy once, they locked me in a room. A rubber room! A rubber room with rats, rats make me crazy!")
+        print("-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------\nThanks for playing our game! :) \n Made possible by Isne, Yema & Nodu")
+    if x == "No" or x == "2" or x == "no":
+        print("Crazy?! I was crazy once, they locked me in a room. A rubber room! A rubber room with rats, rats make me crazy!") # We can possibly use a for loop to duplicate these instead of 3 different prints, but idk
         time.sleep(3)
-        print("Crazy?! I was crazy once, they locked me in a room. A rubber room! A rubber room with rats, rats make me crazy!")
+        print("Crazy?! I was crazy once, they locked me in a room. A rubber room! A rubber room with rats, rats make me crazy!")# We can possibly use a for loop to duplicate these instead of 3 different prints, but idk
+        time.sleep(3) 
+        print("Crazy?! I was crazy once, they locked me in a room. A rubber room! A rubber room with rats, rats make me crazy!") # We can possibly use a for loop to duplicate these instead of 3 different prints, but idk
+        print("Thanks for playing our game! :) \n Made possible by Isne, Yema & Nodu") 
+        time.sleep(10)
 
 def describe_room_2R(): # Doll ending, R for right
     print("In the final room, dim candlelight reveals a life-sized, eerie doll. Its glassy eyes follow your every step as you approach, sending shivers down your spine. A haunting melody fills the air, and the doll's frayed clothing rustles as it moves closer. Heart pounding, you escape just as its malevolent grin twists into nothingness, leaving you with a chilling memory.")
     x = input("Do you want to head back and fight the monster with the items that you have picked up? \n 1. Yes \n 2. No \n >")
-    if x == "Yes" or "1":
+    if x == "Yes" or x == "1" or x == "yes":
         print("You use your knife and slice the doll's throat open. The doll lays on the ground \n You unlocked the achievement: The Doll Master")
         time.sleep(3)
-        print("Thanks for playing our game! ")
-    if x == "No" or "2":
+        print("Thanks for playing our game! :) \n Made possible by Isne, Yema & Nodu")
+        time.sleep(10)
+        
+    if x == "No" or x == "2" or x == "no":
         print("You run away, but the doll will haunt you for the rest of your life. \n You unlocked the achievement: Runaway ")
         time.sleep(3)
-        print("Thanks for playing our game! ")
-
-def describe_room_3L(): # Happy ending, L for left
-    print("Congratulations you have reached one of the endings. Confetti rains from the sky and disco lights start flashing. The boss's menacing roar turns into comical squeaks as it shrinks down, wearing oversized sunglasses. Your character starts dancing the floss, and a parade of friendly NPCs joins in. ")
+        print("Thanks for playing our game! :) \n Made possible by Isne, Yema & Nodu")
+        time.sleep(10)
+        
 
 def describe_room_3R(): # # Ancient ending, R for right
-    print("You go the ancient doors creak open, revealing a chamber bathed in an ethereal glow. As you step inside, a sense of accomplishment washes over you. The room is adorned with intricate carvings depicting your journey, a testament to your tenacity. \n At the center lies the long-lost artifact you've been seeking, emitting a soft, comforting hum. As you pick it up, memories of your adventure rush through your mind. The challenges, the friendships forged, and the sacrifices made all come flooding back. \n A voice echoes, recounting your choices and their consequences. You're presented with a choice one last time: to use the artifact for power or to return it to its rightful place. Your decision shapes the world's destiny.")
+    print("You enter the room and the ancient doors creak open, revealing a chamber bathed in an ethereal glow. \nAs you step inside, a sense of accomplishment washes over you. The room is adorned with intricate carvings depicting your journey, a testament to your tenacity. \nAt the center lies the long-lost artifact you've been seeking, emitting a soft, comforting hum. As you pick it up, memories of your adventure rush through your mind. The challenges, the friendships forged, and the sacrifices made all come flooding back. \nA voice echoes, recounting your choices and their consequences. You're presented with a choice one last time: to use the artifact for power or to return it to its rightful place. Your decision shapes the world's destiny.\n")
+    x = input("Now the question is, do you wish to use this artifact to save the world? \n1. Yes\n2. No")
+    if x == "yes" or x == "Yes" or x == "1" or x == "1.":
+        print("The world is restored. \n You have unlocked the achievement: True Peace.")
+    if x == "no" or x == "No" or x == "2" or x == "2.":
+        print("You have left the world in a million pieces. \n You have unlocked the achievement: World Destroyer.")
+    time.sleep(10)
+    print("Thanks for playing our game! :) \n Made possible by Isne, Yema & Nodu")
+    time.sleep(10)
+    
 
 inventory = [] # Et empty inventory liste, fordi vi skal adde str values til den når vi finder items i spillet
 
@@ -68,6 +96,8 @@ def describeinventory():
         print("You currently have a knife in your inventory.")
     if "pistol" in inventory:
         print("You currently have a pistol in your inventory.")
+    else:
+        print("You currently dont have any items.")
 
 # Print en beskrivelse af current_room
 # Vi tager vores 'current_room' og sætter den ind som parameter her
@@ -78,19 +108,17 @@ def look(current_room):
     elif current_room == 2 and "knife" not in inventory:
         describe_room_1R()
         inventory.append("knife") # append adder en value til en liste, i det her tilfælde adder vi str("knife") til variablen "inventory"
-    elif current_room == 6 and "pistol" not in inventory:
+    elif current_room == 51 and "pistol" not in inventory:
         describe_room_1L()
         inventory.append("pistol")
-    elif current_room == 11:
-        describe_room_2R()
     elif current_room == 3:
+        describe_room_2R()
+    elif current_room == 101:
         describe_room_2L()
-    elif current_room == 4:
+    elif current_room == 52:
         describe_room_3R()
-    elif current_room == 16:
-        describe_room_3L()
     else:
-        print("Der er sket en fejl.")
+        print("You cannot walk that way")
 
 # Hold styr på hvilket rum spilleren er i
 current_room = 1
@@ -107,27 +135,30 @@ while True:
         elif current_room == 6:
             inventory.append("pistol")
     elif command == "quit": # Hvis brugeren skriver 'quit' slutter programmet
-        ask_user_to_quit = input("Are you sure you wish to kill yourself?")
-        if ask_user_to_quit == "Yes":
+        ask_user_to_quit = input("Are you sure you wish to kill yourself?\n 1. Yes\n 2. No\n > ")
+        if ask_user_to_quit == "Yes" or ask_user_to_quit == "yes" or ask_user_to_quit == "1":
             print("You have commited suicide.")
             time.sleep(2)
             print("Game will now end...")
             break
         if ask_user_to_quit == "No":
-            gamestart()
+            gamestart() # Så starter vi om
+            choosecharacter() # Og vi tager selvfølgeligt og kører denne funktion igen pga ellers får vi bare "gamestart()" print funktionen
     elif command == "next":
         print("Do you want to move left or right? \n")
-# Jeg har gjort sådan at right rooms er +1 og left rooms er +5 simply
+# Jeg har gjort sådan at right rooms er +1 og left rooms er +50 simply
 #  bare for at gøre kommandoen left of right nemmere at lave
     elif command == "left":
         print("You have moved through the door to your left! \n Use 'look' command to look around")
-        current_room += 5
+        current_room += 50
     elif command == "right":
         print("You have moved through the door to your right! \n Use 'look' command to look around")
         current_room += 1
     elif command == "inventory":
         describeinventory()
+    elif command == "restart":
+        gamestart()
     elif command == "help":
-        print(" 'look' (Describes the current room, the player will look around \n 'next' (Moves you to the choice between the left and right room)\n 'left' (You continue to the left room)\n 'right' (You continue to the right room) \n 'inventory' (Lists the items that you hold.) \n 'quit' (End game)")
+        print("----------------------------------------------------------------------------------------------- \n- 'look' (Describes the current room, the player will look around \n- 'next' (Moves you to the choice between the left and right room)\n- 'left' (You continue to the left room)\n- 'right' (You continue to the right room) \n- 'inventory' (Lists the items that you hold.) \n- 'restart' (Starts the game from the beginning) \n- 'quit' (End game)")
     else:
         print("You most likely misspelled, please try again!") # Hvis brugeren skriver noget andet ved en fejl
