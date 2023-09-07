@@ -16,6 +16,8 @@ The commands are listed below:
 
 <i>right</i> (You continue to the right room)
 
+<i>inventory</i> (Checks users items)
+
 <i>quit</i> (End game)
 
 <hr>
