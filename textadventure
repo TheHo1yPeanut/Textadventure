@@ -4,18 +4,19 @@ def gamestart(): # Vi laver den her som en funktion så vi kan kalde det hvis fo
 
 gamestart() # Kalder funktionen gamestart
 
-
+def npc_start():
+    pass
 
 def the_end_print(): # doesnt work like that apparently, can't call this function inside another function and I wont research why, cause I'm tired!
-    print("Thanks for playing our game! :) \n Made by Isne, Yema & Nodu \n H.C. Ørsted Gymnasium")
+    print("Thanks for playing our game! :) \n Made possible by Isne, Yema & Nodu \n H.C. Ørsted Gymnasium")
 
 def choosecharacter():
     x = input("Which character do you select?\n 1. Isak\n 2. Eugen\n 3. Noah\n - ")
-    if x == "Noah" or x == "3" or x == "noah" or x == "3." or x == "nodu" or x == "Nodu" or x == "nOAH" or x == "NOAH" or x == " noah" or x == " Noah" or x == " 3" or x == " .3":
+    if x == "Noah" or x == "3" or x == "noah" or x == "3." or x == "nodu" or x == "Nodu" or x == "nOAH" or x == "NOAH" or x == " noah" or x == " Noah" or x == " 3" or x == " .3" or x ==  "three":
         print("Congratulations! You have chosen an ADHD kid :) \n use 'help' if confused")
-    elif x == "Eugen" or x == "2" or x == "eugen" or x == "2." or x == "yevhen" or x == "Yevhen" or x == "Yema" or x == " 1" or x == "EUGEN" or x == " eugen" or x == " Eugen": 
+    elif x == "Eugen" or x == "2" or x == "eugen" or x == "2." or x == "yevhen" or x == "Yevhen" or x == "Yema" or x == " 1" or x == "EUGEN" or x == " eugen" or x == " Eugen" or x ==  "two": 
         print("Congratulations! You have chosen the main character from Prison Break \n use 'help' if confused")
-    elif x == "Isak" or x == "1" or x == "isak" or x == "1." or x == "isne" or x == "Isne" or x == "ISAK" or x == "iSAK" or x == " Isak" or x == " isak" or x == " 1" or x ==  " .1":
+    elif x == "Isak" or x == "1" or x == "isak" or x == "1." or x == "isne" or x == "Isne" or x == "ISAK" or x == "iSAK" or x == " Isak" or x == " isak" or x == " 1" or x ==  " .1" or x ==  "one":
         print("Congratulations! You have chosen the smartest, strongest and most handsome character in the game \n use 'help' if confused")
     else:
         print("You have most likely misspelled the name, please try again!")
@@ -58,7 +59,7 @@ def describe_room_2L(): # Crazy ending, L for left
         print("Crazy?! I was crazy once, they locked me in a room. A rubber room! A rubber room with rats, rats make me crazy!")# We can possibly use a for loop to duplicate these instead of 3 different prints, but idk
         time.sleep(3) 
         print("Crazy?! I was crazy once, they locked me in a room. A rubber room! A rubber room with rats, rats make me crazy!") # We can possibly use a for loop to duplicate these instead of 3 different prints, but idk
-        print("Thanks for playing our game! :) \n Made possible by Isne, Yema & Nodu") 
+        the_end_print()
         time.sleep(10)
 
 def describe_room_2R(): # Doll ending, R for right
@@ -67,13 +68,13 @@ def describe_room_2R(): # Doll ending, R for right
     if x == "Yes" or x == "1" or x == "yes":
         print("You use your knife and slice the doll's throat open. The doll lays on the ground \n You unlocked the achievement: The Doll Master")
         time.sleep(3)
-        print("Thanks for playing our game! :) \n Made possible by Isne, Yema & Nodu")
+        the_end_print()
         time.sleep(10)
         
     if x == "No" or x == "2" or x == "no":
         print("You run away, but the doll will haunt you for the rest of your life. \n You unlocked the achievement: Runaway ")
         time.sleep(3)
-        print("Thanks for playing our game! :) \n Made possible by Isne, Yema & Nodu")
+        the_end_print()
         time.sleep(10)
         
 
@@ -85,7 +86,7 @@ def describe_room_3R(): # # Ancient ending, R for right
     if x == "no" or x == "No" or x == "2" or x == "2.":
         print("You have left the world in a million pieces. \n You have unlocked the achievement: World Destroyer.")
     time.sleep(10)
-    print("Thanks for playing our game! :) \n Made possible by Isne, Yema & Nodu")
+    the_end_print()
     time.sleep(10)
     
 
